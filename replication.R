@@ -7,7 +7,7 @@
 ##Part 2: Data Analysis
 ##Part 3: Data Visualisation
 
-setwd("~/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(readxl)
 library(sjPlot) 
 library(haven)
@@ -20,13 +20,15 @@ library(lmtest)
 
 ##Part 1: Operationalisation####
 
+##run data wrangling script for 'data1'
+
 ##country sample n = 49
   #data1_noNA <- na.omit(data1) #N = 30
   #data1$LO <- as.integer(data1$LO)
   
 ###DV2: Norms, Attitudes#####
-  ####prep####
-  afrobar <- read.spss("/Users/sara/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper/Data/Dependent Variable(s)/Afrobarometer/Round 7 2019 merged.sav", 
+  ####prep Afrobarometer data####
+  afrobar <- read.spss("afrobarometer_round7_2019_merged.sav", 
                        use.value.labels = TRUE, to.data.frame	= TRUE)
   afrobar <- afrobar[, c("COUNTRY", "REGION", "Q1", "Q87C", "Q97", "Q98", "Q101" ,"Q115", "Q118", "Q98")]    
   afrobar <-afrobar[afrobar$Q87C !="Missing", ]

@@ -1,6 +1,7 @@
-###Module: Seminar Paper Colonialism and its Consequences in Asia and Africa
-##Title: Colonial legacies on LGBT+ rights and attitudes
+###Seminar: Colonialism and its Consequences in Asia and Africa, University of Zurich, Spring 2021
+##Paper Title: Colonial legacies on LGBT+ rights and attitudes
 ##Author: Sara Kallis
+##Date: 28 June 2021
 
 ###Contents:
 ##Part 1: Operationalisation
@@ -96,7 +97,7 @@ library(lmtest)
   plot(model4)
     hist(data1$pop_2019)
     hist(log(data1$pop_2019))
-    ##don't show this lol
+    ##don't show this
     
     model4b <- lm(legal_protection ~ LO_British + (aids_d_1990) + polity + log(pop_2019), data = data1)
     model4f <- lm(legal_protection ~ LO_French + (aids_d_1990) + polity + log(pop_2019), data = data1)
@@ -242,28 +243,28 @@ library(lmtest)
     
       #Hypothesis 1: Effect on Laws
     stargazer(model1, model4, model5, model12, model13, type = "html", 
-              out = "/Users/sara/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper/Tables and Plots/table1.doc")
+              out = "table1.doc")
     plot_model( type = "slope")
     
     stargazer(model4bf, model4m, type = "html", 
-              out = "/Users/sara/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper/Tables and Plots/table1_new.doc")
+              out = "table1_new.doc")
     ##Appendix
     stargazer(model5bf, model5m, model13bf, model13m, type = "html", 
-              out = "/Users/sara/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper/Tables and Plots/table1_appendix.doc")
+              out = "table1_appendix.doc")
     
     
       #Hypothesis 2: Effect on Norms
     stargazer(model6, model7, type = "html", 
-              out = "/Users/sara/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper/Tables and Plots/table2.doc")
+              out = "table2.doc")
     plot_model(model6, type = "slope")
     plot_model(model7, type = "pred")
     plot_model(model7, type = "std")
     
     stargazer(model14, model15, type = "html", 
-              out = "/Users/sara/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper/Tables and Plots/table3.doc")
+              out = "table3.doc")
     
     stargazer(model16, model17, type = "html", 
-              out = "/Users/sara/Documents/FS21/Kolonialismus in Afrika und Asien/Seminar Paper/Tables and Plots/table4.doc")
+              out = "table4.doc")
     
     
 
